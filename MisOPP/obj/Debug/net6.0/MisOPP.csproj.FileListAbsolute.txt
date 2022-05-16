@@ -1,0 +1,15 @@
+C:\Users\MI\source\repos\MisOPP\MisOPP\bin\Debug\net6.0\MisOPP.exe
+C:\Users\MI\source\repos\MisOPP\MisOPP\bin\Debug\net6.0\MisOPP.deps.json
+C:\Users\MI\source\repos\MisOPP\MisOPP\bin\Debug\net6.0\MisOPP.runtimeconfig.json
+C:\Users\MI\source\repos\MisOPP\MisOPP\bin\Debug\net6.0\MisOPP.dll
+C:\Users\MI\source\repos\MisOPP\MisOPP\bin\Debug\net6.0\MisOPP.pdb
+C:\Users\MI\source\repos\MisOPP\MisOPP\obj\Debug\net6.0\MisOPP.csproj.AssemblyReference.cache
+C:\Users\MI\source\repos\MisOPP\MisOPP\obj\Debug\net6.0\MisOPP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MI\source\repos\MisOPP\MisOPP\obj\Debug\net6.0\MisOPP.AssemblyInfoInputs.cache
+C:\Users\MI\source\repos\MisOPP\MisOPP\obj\Debug\net6.0\MisOPP.AssemblyInfo.cs
+C:\Users\MI\source\repos\MisOPP\MisOPP\obj\Debug\net6.0\MisOPP.csproj.CoreCompileInputs.cache
+C:\Users\MI\source\repos\MisOPP\MisOPP\obj\Debug\net6.0\MisOPP.dll
+C:\Users\MI\source\repos\MisOPP\MisOPP\obj\Debug\net6.0\refint\MisOPP.dll
+C:\Users\MI\source\repos\MisOPP\MisOPP\obj\Debug\net6.0\MisOPP.pdb
+C:\Users\MI\source\repos\MisOPP\MisOPP\obj\Debug\net6.0\MisOPP.genruntimeconfig.cache
+C:\Users\MI\source\repos\MisOPP\MisOPP\obj\Debug\net6.0\ref\MisOPP.dll
