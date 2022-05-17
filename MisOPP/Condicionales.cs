@@ -14,23 +14,26 @@ namespace MisOPP
             int opcion2;
             try
             {
-                Console.WriteLine("Menu Condicionales:");
-                Console.WriteLine("-------------------");
-                Console.WriteLine("1.Positivo o Negativo");
+                Console.WriteLine("\nMenu Condicionales:");
+                Console.WriteLine("\n1.Positivo o Negativo");
                 Console.WriteLine("2.Mayor y Menor");
                 Console.WriteLine("3.3 Numeros enteros (Mayor y Menor");
                 Console.WriteLine("4.Suma o Resta entre A y B");
                 Console.WriteLine("5.Cociente entre A y B");
                 Console.WriteLine("6.Suma o Multiplicacion entre A y B");
                 Console.WriteLine("7.Año bisiesto o no");
+                Console.WriteLine("99.Salir del Programa\n");
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Valor Incorrecto \nIngrese un valor numerico");
+                Console.WriteLine("Dato Incorrecto \nIngrese un valor numerico");
                 Retorno.Volver();
             }
 
+            Console.WriteLine("Elija una opcion:\n");
             opcion2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("");
             switch (opcion2)
             {
                 case 1:
@@ -54,25 +57,24 @@ namespace MisOPP
                 case 7:
                     ejercicios.AñoBisiesto();
                     break;
+                case 99:
+                    Console.WriteLine("Se eligio finalizar el programa");
+                    Environment.Exit(1);
+                    break;
             }
             return 0;
         }
         class EjerciciosCon
         {
-            private double num1 = 0.0;
-            private double num2 = 0.0;
-            private double num3 = 0.0;
-            private double num4 = 0.0;
-            private double num5 = 0.0;
             public double NegativoPositivo()
             {
                 Console.WriteLine("Ingrese el numero: ");
-                num1 = float.Parse(Console.ReadLine());
-                if (num1 > 0)
+                Global.nm1 = float.Parse(Console.ReadLine());
+                if (Global.nm1 > 0)
                 {
                     Console.WriteLine("El numero ingresado es positivo");
                 }
-                if (num1 < 0)
+                if (Global.nm1 < 0)
                 {
                     Console.WriteLine("El numero ingresado es negativo");
                 }
@@ -82,39 +84,39 @@ namespace MisOPP
             public double MayorMenor()
             {
                 Console.WriteLine("Digite el 1er numero");
-                num1 = float.Parse(Console.ReadLine());
+                Global.nm1 = float.Parse(Console.ReadLine());
                 Console.WriteLine("Digite el 2do numero");
-                num2 = float.Parse(Console.ReadLine());
-                if (num1 > num2)
+                Global.nm2 = float.Parse(Console.ReadLine());
+                if (Global.nm1 > Global.nm2)
                 {
-                    Console.WriteLine(num1 + " Es mayor que " + num2);
+                    Console.WriteLine(Global.nm1 + " Es mayor que " + Global.nm2);
                 }
                 else
                 {
-                    Console.WriteLine(num2 + " Es mayor que " + num1);
+                    Console.WriteLine(Global.nm2 + " Es mayor que " + Global.nm1);
                 }
                 return 0.0;
             }
             public double MayorMenorTres()
             {
                 Console.WriteLine("Digite el 1er numero");
-                num1 = float.Parse(Console.ReadLine());
+                Global.nm1 = float.Parse(Console.ReadLine());
                 Console.WriteLine("Digite el 2do numero");
-                num2 = float.Parse(Console.ReadLine());
+                Global.nm2 = float.Parse(Console.ReadLine());
                 Console.WriteLine("Digite el 3er numero");
-                num3 = float.Parse(Console.ReadLine());
-                num4 = num1;
-                if (num2 > num4)
-                    num4 = num2;
-                if (num3 > num4)
-                    num4 = num3;
-                Console.WriteLine("El numero mayor es:" + num4);
-                num5 = num1;
-                if (num2 < num5)
-                    num5 = num2;
-                if (num3 < num5)
-                    num5 = num3;
-                Console.WriteLine("El numero menor es:" + num5);
+                Global.nm3 = float.Parse(Console.ReadLine());
+                Global.nm4 = Global.nm1;
+                if (Global.nm2 > Global.nm4)
+                    Global.nm4 = Global.nm2;
+                if (Global.nm3 > Global.nm4)
+                    Global.nm4 = Global.nm3;
+                Console.WriteLine("El numero mayor es:" + Global.nm4);
+                Global.nm5 = Global.nm1;
+                if (Global.nm2 < Global.nm5)
+                    Global.nm5 = Global.nm2;
+                if (Global.nm3 < Global.nm5)
+                    Global.nm5 = Global.nm3;
+                Console.WriteLine("El numero menor es:" + Global.nm5);
                 return 0.0;
             }
 
@@ -122,20 +124,20 @@ namespace MisOPP
             {
 
                 Console.WriteLine("Digite el 1er numero");
-                num1 = float.Parse(Console.ReadLine());
+                Global.nm1 = float.Parse(Console.ReadLine());
                 Console.WriteLine("Digite el 2do numero");
-                num2 = float.Parse(Console.ReadLine());
-                if (num1 < num2)
+                Global.nm2 = float.Parse(Console.ReadLine());
+                if (Global.nm1 < Global.nm2)
                 {
-                    num3 = num1 + num1;
-                    Console.WriteLine("A es menor que B el resultado de la suma es :" + num3);
+                    Global.nm3 = Global.nm1 + Global.nm2;
+                    Console.WriteLine("A es menor que B el resultado de la suma es :" + Global.nm3);
                 }
                 else
                 {
-                    if (num1 > num2)
+                    if (Global.nm1 > Global.nm2)
                     {
-                        num4 = num1 - num2;
-                        Console.WriteLine("A es mayor que B \nEl resultado de la resta es :" + num4);
+                        Global.nm4 = Global.nm1 - Global.nm2;
+                        Console.WriteLine("A es mayor que B \nEl resultado de la resta es :" + Global.nm4);
                     }
 
                 }
@@ -145,17 +147,17 @@ namespace MisOPP
             {
 
                 Console.WriteLine("Ingrese el dividendo :");
-                num1 = float.Parse(Console.ReadLine());
+                Global.nm1 = float.Parse(Console.ReadLine());
                 Console.WriteLine("Ingrese le divisor :");
-                num2 = float.Parse(Console.ReadLine());
-                if (num1 > 0 && num2 > 0)
+                Global.nm2 = float.Parse(Console.ReadLine());
+                if (Global.nm1 > 0 && Global.nm2 > 0)
                 {
-                    num3 = num1 / num2;
-                    Console.WriteLine("El cociente entre entre A y B es :" + num3);
+                    Global.nm3 = Global.nm1 / Global.nm2;
+                    Console.WriteLine("El cociente entre entre A y B es :" + Global.nm3);
                 }
                 else
                 {
-                    if (num1 <= 0 || num2 <= 0)
+                    if (Global.nm1 <= 0 || Global.nm2 <= 0)
                     {
                         Console.WriteLine("la division no es posible");
                     }
@@ -166,21 +168,21 @@ namespace MisOPP
             public double NegPos()
             {
 
-                num1 = 0;
+                Global.nm1 = 0;
                 Console.WriteLine("Ingrese 1er numero");
-                num2 = float.Parse(Console.ReadLine());
+                Global.nm2 = float.Parse(Console.ReadLine());
                 Console.WriteLine("Ingrese el 2do numero");
-                num3 = float.Parse(Console.ReadLine());
-                if (num2 < 0)
+                Global.nm3 = float.Parse(Console.ReadLine());
+                if (Global.nm2 < 0)
                 {
-                    num1 = num2 + num3;
-                    Console.WriteLine("El numero es negativo \n El resultado de la suma :" + num1);
+                    Global.nm1 = Global.nm2 + Global.nm3;
+                    Console.WriteLine("El numero es negativo \n El resultado de la suma :" + Global.nm1);
                 }
                 else
                 {
-                    if (num2 > 0)
-                        num1 = num2 * num3;
-                    Console.WriteLine("El numero es positivo \n El resultado de la multiplacion :" + num1);
+                    if (Global.nm2 > 0)
+                        Global.nm1 = Global.nm2 * Global.nm3;
+                    Console.WriteLine("El numero es positivo \n El resultado de la multiplacion :" + Global.nm1);
 
                 }
                 return 0.0;
@@ -188,13 +190,11 @@ namespace MisOPP
 
             public double AñoBisiesto()
             {
-
                 Console.WriteLine("Ingrese el año :");
-                num1 = Convert.ToDouble(Console.ReadLine());
-                bool esBisiesto = DateTime.IsLeapYear((int)num1);
+                Global.nm1 = Convert.ToDouble(Console.ReadLine());
+                bool esBisiesto = DateTime.IsLeapYear((int)Global.nm1);
                 Console.WriteLine("¿El año es bisiesto? : " + esBisiesto);
-                return num1;
-
+                return 0.0;
             }
         }
     }

@@ -18,19 +18,21 @@ namespace MisOPP
             try
             {
                 Console.WriteLine("Menú Miscelánea:");
-                Console.WriteLine("-------------------");
-                Console.WriteLine("1.Operadores");
+                Console.WriteLine("\n1.Operadores");
                 Console.WriteLine("2.Condicionales");
                 Console.WriteLine("3.Ciclos");
-                Console.WriteLine("99.Salir del Programa");
+                Console.WriteLine("99.Salir del Programa\n");
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Valor Incorrecto \nIngresé un valor numérico");
+                Console.WriteLine("Dato Incorrecto \nIngresé un valor numérico");
                 Retorno.Volver();
             }
-            
+
+            Console.WriteLine("Elija una opcion:\n");
             MenuPrin = int.Parse(Console.ReadLine());
+            Console.WriteLine("");
             switch (MenuPrin)
             {
 
@@ -50,6 +52,7 @@ namespace MisOPP
                     break;
 
                 case 99:
+                    Console.WriteLine("Se eligio finalizar el programa");
                     Environment.Exit(1);
                     break;
 

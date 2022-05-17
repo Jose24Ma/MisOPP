@@ -15,9 +15,8 @@ namespace MisOPP
             int opcion1;
             try
             {
-                Console.WriteLine("Menú de Operadores:");
-                Console.WriteLine("-------------------");
-                Console.WriteLine("1.Área Triángulo");
+                Console.WriteLine("\nMenú de Operadores:");
+                Console.WriteLine("\n1.Área Triángulo");
                 Console.WriteLine("2.Suma 2 Enteros");
                 Console.WriteLine("3.Elevación al Cuadrado");
                 Console.WriteLine("4.Conversión Euros a Dolares");
@@ -25,21 +24,25 @@ namespace MisOPP
                 Console.WriteLine("6.Área y Volumen (Cilindro)");
                 Console.WriteLine("7.Área de una circunferencia");
                 Console.WriteLine("8.Promedio de 3 Num.");
+                Console.WriteLine("99.Salir del Programa\n");
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Valor Incorrecto \nIngresé un valor numérico");
+                Console.WriteLine("Dato Incorrecto \nIngresé un valor numérico");
                 Retorno.Volver();
             }
 
+            Console.WriteLine("Elija una opcion:\n");
             opcion1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("");
             switch (opcion1)
             {
                 case 1:
                     ejercicios.AreaTriangulo();
                     break;
                 case 2:
-                    ejercicios.SumaEnteros();
+                    ejercicios.SumaEnteros1();
                     break;
                 case 3:
                     ejercicios.PotenciaNum();
@@ -59,97 +62,96 @@ namespace MisOPP
                 case 8:
                     ejercicios.Promedio();
                     break;
+                case 99:
+                    Console.WriteLine("Se eligio finalizar el programa");
+                    Environment.Exit(1);
+                    break;
             }
             return 0;
         }
         class EjerciciosOp
-        {
-            private double num1 = 0.0;
-            private double num2 = 0.0;
-            private double num3 = 0.0;
-            private double num4 = 0.0;
-            
+        {       
             
             public double AreaTriangulo()
             {
                 Console.WriteLine("Calcular Area Triangulo ");
                 Console.WriteLine("Ingrese la base : ");
-                num1 = Convert.ToDouble(Console.ReadLine());
+                Global.nm1 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Ingrese la altura : ");
-                num2 = Convert.ToDouble(Console.ReadLine());
-                num4 = num1 * num2 / 2;
-                Console.WriteLine("El resultado del area es:" + num4);
+                Global.nm2 = Convert.ToDouble(Console.ReadLine());
+                Global.nm4 = Global.nm1 * Global.nm2 / 2;
+                Console.WriteLine("El resultado del area es:" + Global.nm4);
                 return 0.0;
             }
-            public double SumaEnteros()
+            public double SumaEnteros1()
             {
                 Console.WriteLine("Escriba dos numeros enteros: ");
                 Console.WriteLine("Ingrese 1er entero : ");
-                num1 = Convert.ToDouble(Console.ReadLine());
+                Global.nm1 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Ingrese 2do entero: ");
-                num2 = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("El resultado de la suma:" + num3);
-                num3 = num1 + num2;
+                Global.nm2 = Convert.ToDouble(Console.ReadLine());
+                Global.nm3 = Global.nm1 + Global.nm2;
+                Console.WriteLine("El resultado de la suma:" + Global.nm3);
                 return 0.0;
 
             }
             public double PotenciaNum()
             {
                 Console.WriteLine("Ingrese el numero : ");
-                num1 = Convert.ToDouble(Console.ReadLine());
-                double elevadoAlCuadrado = Math.Pow(num1, 2);
-                Console.WriteLine(string.Format("{0} elevado al cuadrado es {1}", num1, elevadoAlCuadrado));
+                Global.nm1 = Convert.ToDouble(Console.ReadLine());
+                double elevadoAlCuadrado = Math.Pow(Global.nm1, 2);
+                Console.WriteLine(string.Format("{0} elevado al cuadrado es {1}", Global.nm1, elevadoAlCuadrado));
                 return 0.0;
             }
             public double ConversionExD()
             {
 
                 Console.WriteLine("Ingrese la cantidad de euros : ");
-                num1 = double.Parse(Console.ReadLine());
-                num2 = num1 * 1.06;
-                Console.WriteLine("El resultado de la conversion: " + num2);
+                Global.nm1 = double.Parse(Console.ReadLine());
+                Global.nm2 = Global.nm1 * 1.06;
+                Console.WriteLine("El resultado de la conversion a Dolar: " + Global.nm2);
                 return 0.0;
             }
             public double AreaPerimetroCua()
             {
                 Console.WriteLine("Ingrese el lado del cuadrado: ");
-                num1 = float.Parse(Console.ReadLine());
-                num3 = num1 * 4;
-                num4 = num1 * num1;
-                Console.WriteLine("El perimetro es :" + num3);
-                Console.WriteLine("El area es :" + num4);
+                Global.nm1 = float.Parse(Console.ReadLine());
+                Global.nm3 = Global.nm1 * 4;
+                Global.nm4 = Global.nm1 * Global.nm1;
+                Console.WriteLine("El perimetro es :" + Global.nm3);
+                Console.WriteLine("El area es :" + Global.nm4);
                 return 0.0;
             }
             public double AreaVolumen()
             {
                 Console.Write("Ingresa el valor de altura: ");
-                num1 = double.Parse(Console.ReadLine());
+                Global.nm1 = double.Parse(Console.ReadLine());
                 Console.Write("Ingresa el valor de radio: ");
-                num2 = double.Parse(Console.ReadLine());
-                num3 = Math.PI * num2 * num2 * num2;
-                num4 = 2.0 * Math.PI * num2 * (num2 + num1);
-                Console.WriteLine("Valor de area: " + num4);
-                Console.WriteLine("Valor de volumen: " + num3);
+                Global.nm2 = double.Parse(Console.ReadLine());
+                Global.nm3 = Math.PI * Global.nm2 * Global.nm2 * Global.nm2;
+                Global.nm4 = 2.0 * Math.PI * Global.nm2 * (Global.nm2 + Global.nm1);
+                Console.WriteLine("Valor de area: " + Global.nm4);
+                Console.WriteLine("Valor de volumen: " + Global.nm3);
                 return 0.0;
             }
 
             public double AreaCirculo()
             {
                 Console.WriteLine("Ingrese el numero del Diametro");
-                num1 = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("El radio es:" + CircunferenciaEnteros(num1));
+                Global.nm1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("El radio es:" + CircunferenciaEnteros(Global.nm1));
                 static double CircunferenciaEnteros(double num1)
                 {
                     return Convert.ToDouble(num1 / 2);
                 }
-                Console.WriteLine("La longitud es:" + LongitudEnteros(num1));
+                Console.WriteLine("La longitud es:" + LongitudEnteros(Global.nm1));
                 static double LongitudEnteros(double num1)
                 {
                     return Convert.ToDouble((2 * 3.14) * num1);
                 }
                 Console.WriteLine("Ingrese el numero del area");
-                num2 = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("El area es:" + AreaCirEnteros(num1, num2));
+                Global.nm2 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("El area es:" + AreaCirEnteros(Global.nm1, Global.nm2));
                 static double AreaCirEnteros(double num1, double num2)
                 {
                     return Convert.ToDouble(3.14 * (2 * num2));
@@ -160,13 +162,13 @@ namespace MisOPP
             public double Promedio()
             {
                 Console.Write("Ingresa 1er valor: ");
-                num1 = double.Parse(Console.ReadLine());
+                Global.nm1 = double.Parse(Console.ReadLine());
                 Console.Write("Ingresa 2do valor: ");
-                num2 = double.Parse(Console.ReadLine());
+                Global.nm2 = double.Parse(Console.ReadLine());
                 Console.Write("Ingresa 3er valor: ");
-                num3 = double.Parse(Console.ReadLine());
-                num4 = (num1 + num2 + num3) / 3;
-                Console.WriteLine("El promedio total es:" + num4);
+                Global.nm3 = double.Parse(Console.ReadLine());
+                Global.nm4 = (Global.nm1 + Global.nm2 + Global.nm3) / 3;
+                Console.WriteLine("El promedio total es:" + Global.nm4);
                 return 0.0;
             }
         }

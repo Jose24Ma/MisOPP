@@ -14,23 +14,26 @@ namespace MisOPP
             int opcion3;
             try
             {
-                Console.WriteLine("Menu Ciclos:");
-                Console.WriteLine("-------------------");
-                Console.WriteLine("1.Multiplos de 3 entre 1 y 100");
+                Console.WriteLine("\nMenu Ciclos:");
+                Console.WriteLine("\n1.Multiplos de 3 entre 1 y 100");
                 Console.WriteLine("2.Impares entre 0 y 100");
                 Console.WriteLine("3.Pares entre 1 a 100");
-                Console.WriteLine("4.Cuadrados Numeros del 1 al 30");
+                Console.WriteLine("4.Numeros Cuadrados del 1 al 30");
                 Console.WriteLine("5.Suma de cuadrados");
                 Console.WriteLine("6.Secuencia Ascendente");
                 Console.WriteLine("7.Suma de numeros");
+                Console.WriteLine("99.Salir del Programa\n");
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Valor Incorrecto \nIngrese un valor numerico");
+                Console.WriteLine("Dato Incorrecto \nIngrese un valor numerico");
                 Retorno.Volver();
             }
 
+            Console.WriteLine("Elija una opcion:\n");
             opcion3 = int.Parse(Console.ReadLine());
+            Console.WriteLine("");
             switch (opcion3)
             {
                 case 1:
@@ -54,38 +57,37 @@ namespace MisOPP
                 case 7:
                     ejercicios.SumaEnterosIn();
                     break;
+                case 99:
+                    Console.WriteLine("Se eligio finalizar el programa");
+                    Environment.Exit(1);
+                    break;
             }
             return 0;
         }
         class EjerciciosCi
         {
-            private double num1 = 0.0;
-            private double num2 = 0.0;
-            private double num3 = 0.0;
-            private double num4 = 0.0;
-
             public double MultiplosxTres()
             {
 
                 do
                 {
-                    Console.WriteLine("Los multiplos son: " + num3);
-                    num3 = num3 + 3;
-                    num1 = num1 + 1;
+                    Console.WriteLine("Los multiplos son: " + Global.nm1);
+                    Global.nm3 = Global.nm3 + 3;
+                    Global.nm1 = Global.nm1 + 1;
                 }
-                while (num3 < 100);
-                Console.WriteLine("El total de Multiplos son: " + num1);
+                while (Global.nm3 < 100);
+                Console.WriteLine("El total de Multiplos son: " + Global.nm1);
                 return 0.0;
             }
             public double ImparesN()
             {
 
-                for (num1 = 1; num1 <= 100; num1++)
+                for (Global.nm1 = 1; Global.nm1 <= 100; Global.nm1++)
                 {
-                    if (num1 % 2 != 0)
+                    if (Global.nm1 % 2 != 0)
                     {
-                        Console.WriteLine(num1);
-                        num2++;
+                        Console.WriteLine(Global.nm1);
+                        Global.nm2++;
                     }
                 }
                 return 0.0;
@@ -94,44 +96,44 @@ namespace MisOPP
             public double ParesN()
             {
 
-                for (num1 = 2; num1 <= 100; num1 += 2)
+                for (Global.nm1 = 2; Global.nm1 <= 100; Global.nm1 += 2)
                 {
-                    Console.WriteLine(num1);
+                    Console.WriteLine(Global.nm1);
                 }
                 return 0.0;
             }
 
             public double NumerosxCuadrados()
             {
-                for (num1 = 1; num1 <= 30; num1++)
+                for (Global.nm1 = 1; Global.nm1 <= 30; Global.nm1++)
                 {
-                    double elevadoAlCuadrado = Math.Pow(num1, 2);
-                    Console.WriteLine("Proceso " + num1 + "^2 = " + elevadoAlCuadrado);
+                    double elevadoAlCuadrado = Math.Pow(Global.nm1, 2);
+                    Console.WriteLine("Proceso " + Global.nm1 + "^2 = " + elevadoAlCuadrado);
 
                 }
                 return 0.0;
             }
             public double SumaxCuadrados()
             {
-                num1 = 0;
-                for (num2 = 1; num2 <= 100; num2++)
+                Global.nm1 = 0;
+                for (Global.nm2 = 1; Global.nm2 <= 100; Global.nm2++)
                 {
-                    Console.WriteLine("Proceso " + num2);
-                    num1 = num2 * num2;
+                    Console.WriteLine("Proceso " + Global.nm2);
+                    Global.nm1 = Global.nm2 * Global.nm2;
                 }
-                Console.WriteLine("Valor de la suma : " + num1);
+                Console.WriteLine("Valor de la suma : " + Global.nm1);
                 return 0.0;
             }
             public double SecuenciaxAscendente()
             {
                 Console.WriteLine("Digite el primer numero: ");
-                num1 = Convert.ToDouble(Console.ReadLine());
+                Global.nm1 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Digite el segundo numero: ");
-                num2 = Convert.ToDouble(Console.ReadLine());
-                for (num3 = num1 + 1; num3 < num2; num3++)
+                Global.nm2 = Convert.ToDouble(Console.ReadLine());
+                for (Global.nm3 = Global.nm1 + 1; Global.nm3 < Global.nm2; Global.nm3++)
                 {
-                    Console.WriteLine("Los numeros comprendidos entre " + num1 + " y " + num2 + " son :");
-                    Console.WriteLine(num3);
+                    Console.WriteLine("Los numeros comprendidos entre " + Global.nm1 + " y " + Global.nm2 + " son :");
+                    Console.WriteLine(Global.nm3);
                 }
                 return 0.0;
             }
@@ -141,20 +143,20 @@ namespace MisOPP
                 do
                 {
                     Console.WriteLine("Ingrese un valor (0 para finalizar) :");
-                    num1 = Convert.ToDouble(Console.ReadLine());
-                    num2 = num1;
-                    if (num2 != 0)
+                    Global.nm1 = Convert.ToDouble(Console.ReadLine());
+                    Global.nm2 = Global.nm1;
+                    if (Global.nm2 != 0)
                     {
-                        num3 = num3 + num2;
-                        num4++;
+                        Global.nm3 = Global.nm3 + Global.nm2;
+                        Global.nm4++;
 
                     }
                     else
                     {
                         Console.WriteLine("No se ingresan mas valores");
                     }
-                } while (num2 != 0);
-                Console.WriteLine("La suma total es :" + num3);
+                } while (Global.nm2 != 0);
+                Console.WriteLine("La suma total es :" + Global.nm3);
                 return 0.0;
             }
         }
